@@ -20,10 +20,11 @@ passed down for use in templates or even in argument lines.
 NOTE: The cobbler system names will not be used.  Make sure a
 cobbler --dns-name is set for each cobbler system.   If a system
 appears with two DNS names we do not add it twice because we don't want
-ansible talking to it twice.  The first one found will be used. If no
---dns-name is set the system will NOT be visible to ansible.  We do
-not add cobbler system names because there is no requirement in cobbler
-that those correspond to addresses.
+ansible talking to it twice.  Only the first interface marked as a
+management interface will be used. If no --dns-name is set the system
+will NOT be visible to ansible.  We do not add cobbler system names
+because there is no requirement in cobbler that those correspond to
+addresses.
 
 See http://ansible.github.com/api.html for more info
 
