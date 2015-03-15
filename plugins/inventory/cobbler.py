@@ -176,18 +176,21 @@ class CobblerInventory(object):
             profile = host['profile']
             classes = host['mgmt_classes']
 
-            if status not in self.inventory:
-                self.inventory[status] = []
-            self.inventory[status].append(dns_name)
+            if status != '':
+                if status not in self.inventory:
+                    self.inventory[status] = []
+                self.inventory[status].append(dns_name)
 
-            if profile not in self.inventory:
-                self.inventory[profile] = []
-            self.inventory[profile].append(dns_name)
+            if profile != '':
+                if profile not in self.inventory:
+                    self.inventory[profile] = []
+                self.inventory[profile].append(dns_name)
 
             for cls in classes:
-                if cls not in self.inventory:
-                    self.inventory[cls] = []
-                self.inventory[cls].append(dns_name)
+                if cls != '':
+                    if cls not in self.inventory:
+                        self.inventory[cls] = []
+                    self.inventory[cls].append(dns_name)
 
             # Since we already have all of the data for the host, update the host details as well
 
